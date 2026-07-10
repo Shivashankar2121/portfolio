@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   GraduationCap,
   Trophy,
@@ -10,6 +11,38 @@ import {
 } from "lucide-react";
 
 function MoreSections() {
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const [isSent, setIsSent] = useState(false);
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  console.log(formData);
+
+  setIsSent(true);
+
+  setFormData({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  setTimeout(() => {
+    setIsSent(false);
+  }, 2000);
+};
   return (
     <>
       {/* Education */}
@@ -47,7 +80,7 @@ function MoreSections() {
                 </div>
 
                 <p className="text-slate-300 mt-6">
-                  Computer Science & Engineering
+                  Electrical & Electronics  Engineering | 7.8 CGPA
                 </p>
               </div>
 
@@ -61,7 +94,7 @@ function MoreSections() {
                 </p>
 
                 <p className="text-slate-400 mt-3">
-                  Percentage : 76%
+                  PCMB | 76%
                 </p>
               </div>
 
@@ -93,8 +126,8 @@ function MoreSections() {
 
               <ul className="space-y-3 text-slate-300">
                 <li>✔ Full Stack Web Development</li>
-                <li>✔ Linux & Shell Scripting</li>
-                <li>✔ AWS Cloud Training</li>
+                <li>✔ AWS Cloud certification</li>
+                <li>✔ IBM certification</li>
                 <li>✔ Networking Fundamentals</li>
               </ul>
             </div>
@@ -208,7 +241,7 @@ function MoreSections() {
 
             </div>
 
-            <form className="bg-[#0B1528] rounded-3xl p-10 space-y-6">
+            {/* <form className="bg-[#0B1528] rounded-3xl p-10 space-y-6">
 
               <input
                 type="text"
@@ -234,7 +267,57 @@ function MoreSections() {
                 Send Message
               </button>
 
-            </form>
+            </form> */}
+
+            {/*  */}
+
+            <form
+  onSubmit={handleSubmit}
+  className="bg-[#0B1528] rounded-3xl p-10 space-y-6"
+>
+  <input
+    type="text"
+    name="name"
+    value={formData.name}
+    onChange={handleChange}
+    placeholder="Your Name"
+    required
+    className="w-full p-4 rounded-xl bg-slate-800 outline-none focus:ring-2 focus:ring-cyan-500"
+  />
+
+  <input
+    type="email"
+    name="email"
+    value={formData.email}
+    onChange={handleChange}
+    placeholder="Email"
+    required
+    className="w-full p-4 rounded-xl bg-slate-800 outline-none focus:ring-2 focus:ring-cyan-500"
+  />
+
+  <textarea
+    rows="5"
+    name="message"
+    value={formData.message}
+    onChange={handleChange}
+    placeholder="Message"
+    required
+    className="w-full p-4 rounded-xl bg-slate-800 outline-none focus:ring-2 focus:ring-cyan-500"
+  />
+
+  <button
+    type="submit"
+    className={`w-full py-4 rounded-xl font-semibold transition duration-300 ${
+      isSent
+        ? "bg-green-600"
+        : "bg-cyan-500 hover:bg-cyan-600"
+    }`}
+  >
+    {isSent ? "Sent ✓" : "Send Message"}
+  </button>
+</form>
+
+            {/*  */}
 
           </div>
 

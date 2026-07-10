@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import profileImage from "../assets/profile.jpeg";
+// import resume from "../assets/resume.pdf";
+import resume from "../assets/resume.pdf";
 import {
   ArrowRight,
   Download,
@@ -55,14 +57,17 @@ function Hero() {
                 <ArrowRight size={18} />
               </a>
 
-              <a
-                href="/resume.pdf"
-                download
-                className="flex items-center gap-2 border border-cyan-400 hover:bg-cyan-400 hover:text-black transition px-7 py-4 rounded-full font-semibold"
-              >
-                <Download size={18} />
-                Resume
-              </a>
+             <a
+            href={resume}
+            download="resume.pdf"
+            className="flex items-center gap-2 border border-cyan-400 hover:bg-cyan-400 hover:text-black transition px-7 py-4 rounded-full font-semibold"
+>
+  <Download size={18} />
+  Resume
+</a>
+
+
+
 
             </div>
 

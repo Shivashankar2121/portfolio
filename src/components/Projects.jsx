@@ -8,21 +8,21 @@ import {
 
 const projects = [
   {
-    title: "GitHub Profile Card",
+    title: " Real Estate Website",
     icon: <Code2 size={32} />,
     description:
-      "A responsive React application that fetches and displays GitHub user information using the GitHub REST API with search functionality, loading states, and error handling.",
+      "A responsive premium real estate website built with React.js, featuring luxury property listings, smooth animations, responsive design, interactive search, properties.",
 
     technologies: [
+      'Redux',
       "React",
       "JavaScript",
-      "GitHub API",
       "CSS",
       "Responsive UI",
     ],
 
-    // github: "#",
-    demo: "#",
+    github: "https://github.com/Shivashankar2121/LuxeNext",
+    demo: "https://luxe-next.vercel.app/",
   },
 
   {
@@ -39,8 +39,8 @@ const projects = [
       "CRUD",
     ],
 
-    // github: "#",
-    demo: "#",
+    github: "https://github.com/Shivashankar2121/spicy-bites",
+    demo: "https://spicy-bites-rose.vercel.app/",
   },
 
   {
@@ -59,7 +59,7 @@ const projects = [
     ],
 
     // github: "#",
-    demo: "#",
+    // demo: "#",
   },
 ];
 
